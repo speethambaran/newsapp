@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "606209529042",
+    "project_id": "demofirebase-758a8",
+    "storage_bucket": "demofirebase-758a8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:606209529042:android:92c626829fbf4b6e56490b",
+        "android_client_info": {
+          "package_name": "com.infolitz.newsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "606209529042-mgpnkh2orvt9bpc1arge4c3n0dso80g6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCreSD1JLnhkFO6wZypRf17oqWF-_1tePQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "606209529042-mgpnkh2orvt9bpc1arge4c3n0dso80g6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
