@@ -5,9 +5,9 @@ import android.util.Log;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -31,8 +31,9 @@ public class DashBoardActivity extends BaseActivity {
     }
 
     private void init() {
-
-        FirebaseMessaging.getInstance().subscribeToTopic("News")
+        loadUrl("https://newlinesmag.com/");
+//        loadUrl("http://vayahita.com/news1/");
+/*        FirebaseMessaging.getInstance().subscribeToTopic("News")
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
@@ -41,19 +42,31 @@ public class DashBoardActivity extends BaseActivity {
                             msg = "Subscribe failed";
                         }
                         Log.d("FireBaseMsssggg", msg);
-                        Toast.makeText(DashBoardActivity.this, msg, Toast.LENGTH_SHORT).show();
                     }
-                });
-        binding.wvNews3.setWebViewClient(new WebViewClient());
-        binding.wvNews3.getSettings().setJavaScriptEnabled(true);
-        binding.wvNews3.getSettings().setDomStorageEnabled(true);
-        binding.wvNews3.setOverScrollMode(WebView.OVER_SCROLL_NEVER);
-        binding.wvNews3.loadUrl("https://newlinesmag.com/");
+                });*/
 
+
+        binding.swipeRefresh.setColorSchemeResources(R.color.colorAccent, R.color.colorBlack, R.color.colorPrimaryDark);
+        binding.swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                loadUrl("https://newlinesmag.com/");
+//                loadUrl("http://vayahita.com/news1/");
+                binding.swipeRefresh.setRefreshing(false);
+            }
+        });
 
 //        notificationPublisher.scheduleNotification(this, "New Notification Available", 1000);
 
 
+    }
+
+    private void loadUrl(String url) {
+        binding.wvNews3.setWebViewClient(new WebViewClient());
+        binding.wvNews3.getSettings().setJavaScriptEnabled(true);
+        binding.wvNews3.getSettings().setDomStorageEnabled(true);
+        binding.wvNews3.setOverScrollMode(WebView.OVER_SCROLL_NEVER);
+        binding.wvNews3.loadUrl(url);
     }
 
 

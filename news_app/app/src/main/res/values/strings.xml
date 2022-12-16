@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">StoryDesk</string>
+    <string name="default_notification_channel_id">newsAppChannelID</string>
 
 </resources>
