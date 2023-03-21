@@ -31,8 +31,8 @@ public class DashBoardActivity extends BaseActivity {
     }
 
     private void init() {
-        loadUrl("https://newlinesmag.com/");
-//        loadUrl("http://vayahita.com/news1/");
+//        loadUrl("https://newlinesmag.com/");
+        loadUrl("http://vayahita.com/news1/");
 /*        FirebaseMessaging.getInstance().subscribeToTopic("News")
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
@@ -46,14 +46,17 @@ public class DashBoardActivity extends BaseActivity {
                 });*/
 
 
-        binding.swipeRefresh.setColorSchemeResources(R.color.colorAccent, R.color.colorBlack, R.color.colorPrimaryDark);
-        binding.swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                loadUrl("https://newlinesmag.com/");
+//        binding.swipeRefresh.setColorSchemeResources(R.color.colorAccent, R.color.colorBlack, R.color.colorPrimaryDark);
+//        binding.swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+//            @Override
+//            public void onRefresh() {
+////                loadUrl("https://newlinesmag.com/");
 //                loadUrl("http://vayahita.com/news1/");
-                binding.swipeRefresh.setRefreshing(false);
-            }
+//                binding.swipeRefresh.setRefreshing(false);
+//            }
+//        });
+        binding.tvRefresh.setOnClickListener(v -> {
+            loadUrl("http://vayahita.com/news1/");
         });
 
 //        notificationPublisher.scheduleNotification(this, "New Notification Available", 1000);

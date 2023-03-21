@@ -12,7 +12,7 @@ android {
         minSdk 21
         targetSdk 32
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -29,6 +29,14 @@ android {
     }
     buildFeatures {
         viewBinding = true
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def versionName = variant.versionName //e.g 1.0.0
+            outputFileName = "StoryDesk V${versionName}.apk"
+
+        }
     }
 }
 
